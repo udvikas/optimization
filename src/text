@@ -1,0 +1,28 @@
+Video 8 & 9
+
+1.UseState is coming from React, and I just said that React is managing the state and the connection to the component for you. And as part of that management process, React makes sure that useState and the value you pass as a default value to useState essentially is only considered once. 
+
+
+
+2.The first time ever a component is rendered, so the very first time the app component runs, useState, when executed, creates a new state variable
+
+which is handed off to React and which is managed by React. React then basically memorizes to which component that belongs. The app component, in our case. And it uses the default value to initialize the state with that value. For subsequent app function calls, so for reevaluations of the app component,
+
+when useState is being called, no new state is being created. Instead, React recognizes that it already has a state for this component, and it instead simply updates that state as needed because the app function reran because some state changed most likely, and therefore React will only do
+
+that state management and updating. It will never reinitialize the state unless the component was totally removed.
+
+
+
+Video 10
+
+State scheduling involves ordering state updates based on their priority. For example, if a user clicks a button and triggers a state update, the update may be given a higher priority than a state update triggered by a less important event. This ensures that the most important updates are processed first, improving the responsiveness of the application.
+
+State batching, on the other hand, involves combining multiple state updates into a single update. This reduces the number of times the component needs to re-render, improving performance.
+
+For example, let's say a component has two state updates triggered by separate events. Instead of processing each update separately, React will batch them into a single update, minimizing the number of times the component needs to re-render.
+
+Overall, these techniques can greatly improve the performance of React applications by reducing the number of unnecessary state updates and re-renders.
+
+Video 11
+
